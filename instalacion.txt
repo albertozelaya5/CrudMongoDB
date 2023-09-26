@@ -1,0 +1,47 @@
+npm run dev   ---------PARA EJECUTAR EL PUERTO COMO UN SERVER
+
+npm init -y
+
+npm i cowsay
+
+npm i------------- pa compartir solo poner todo excepto node_modules
+
+npm install -g cowsay
+
+cowsay brrrrr
+
+npx cowsay "Hola mundo"
+npx es para emular algo como si estuviera instalado
+
+
+PARA QUE YA SE HAGAN LOS CAMBIOS AUTOMATICAMENTE
+npm install -g nodemon    --Es para escuchar los cambios
+
+EXPRESS
+npm i express
+
+app.use(express.static(__dirname + "/public"));//se define la carpeta publica para que se pueda acceder a ella
+
+404
+app.get("/servicios",(req,res)=>{//en el / se define una pagina dentrro del puerto
+     res.send("Estas en la pagina de servicios");
+});
+
+
+app.listen(port,()=>{
+     console.log("servidor a su servicio brrr", port);
+});
+
+app.use((req,res,next)=>{
+     res.status(404).sendFile(__dirname + "/public/404.html")
+})
+
+
+INSTALAR EJS
+npm i ejs
+
+A LA HORA DE SUBIR CREAR UN .GITIGNORE>node_modules pa que no se suba
+y en package.json>"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },

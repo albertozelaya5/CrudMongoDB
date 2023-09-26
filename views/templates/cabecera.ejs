@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>EJS - <%= tituloWeb %></title>
+     <link rel="stylesheet" href="/css/bootstrap.min.css">
+     <style>
+          .footer{
+               position: absolute;
+               width: 100%;
+               min-height: 320px;
+               bottom: 1rem;
+               left: 0;
+          }
+          @media screen and (max-width: 768px) {
+               .footer{
+               position: absolute;
+               width: 100%;
+               min-height: 320px;
+               bottom: 1rem;
+               left: 0;
+          }
+          }
+     </style>
+</head>
+
+<body>
+     <%- include("navbar") %>
