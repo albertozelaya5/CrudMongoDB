@@ -1,0 +1,30 @@
+---------SI DICE QUE LA BD ESTA APAGADA, USAR LA EXTENSION DE VSCODE--------
+https://bluuweb.github.io/node/05-db/#connet
+----------INSTALAR MONGOOSE EN LA TERMINAL-----------
+npm install mongoose --save
+
+--------En el visual code, app.js configuracion, despues de definir el const port = 3000;-------
+const uer = "";
+const password = "";
+const uri = "";
+
+
+async function main() {
+  await mongoose.connect(uri);
+  //se usa el async y el await para que se espere a que se conecte a la base de datos
+  // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
+}
+main().catch(() => console.log("Base de datos conectada"));
+main().catch(err => console.log(err));
+
+-------------Se crea la bd en mondodb un nuevo documento y en collections(DATABASE, VIEW MONITORING Y COLLECTIONS) insert document y ahi agregar los valroes--------------
+Se asigna usuario y contrasena, y despues ir a database y connect para el uri
+
+--------CONEXION CON VS CODE EN DATABASE CLUSTER0 DAR A CONNECT-------------
+//conexion a base de datos
+const mongoose = require('mongoose');
+//siempre se requiere un usuario, contrasena y uri que es donde se va a alojar
+const user = "alzel5";
+const password = "Ysino@31415";
+const dbname = "veterinaria";//nombre de la base de datos
+const uri = `mongodb+srv://${user}:${password}@cluster0.hf7tplk.mongodb.net/${dbname}`;//para esas comillas invertidas fn+f1

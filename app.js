@@ -1,9 +1,29 @@
 
 const express = require('express');
 const app = express();
+
+require('dotenv').config()
 /* PRIMERO DEFINIR EL REQUIRE EXPRESS, LUEGO GUARDARLO EN UNA VARIABLE */
 /* SEFUIDO DEFINIR PUERTO, LUEGO EL INDEX, LAS PAGINAS Y HASTA ABAJO DE TODO EL 404 */
-const port = 3000;//despues de definir el puerto usar el express estatico
+const port = process.env.PORT || 3000;//despues de definir el puerto usar el express estatico
+
+//-------------CONEXION BD-----------------
+
+//siempre se requiere un usuario, contrasena y uri que es donde se va a alojar
+const mongoose = require('mongoose');
+
+
+const user = 'alzel5';
+const password = 'dbprueba';
+const dbname = 'veterinaria';//nombre de la base de datos
+const uri = `mongodb+srv://${user}:${password}@cluster0.hf7tplk.mongodb.net/${dbname}`;//para esas comillas inver//
+
+
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(()=> console.log('conectado a mongodb')) 
+  .catch(e => console.log('error de conexión', e))
+
+//-------------CONEXION BD-----------------
 
 //motor de plantillas
 app.set("view engine", "ejs");/* VISTAS SOLO ARCHIVOS EJS */
