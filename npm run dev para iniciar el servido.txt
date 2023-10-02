@@ -1,3 +1,0 @@
-npm run dev para iniciar el servidor
---------------------MONGO DB---------------------
-npm install mongoose

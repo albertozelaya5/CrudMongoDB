@@ -1,5 +1,0 @@
-npm i dotenv
-
-------------UNA VES INSTALADO HAY QUE CONFIGURARLO CON UN REQUIRE EN EL APP JS-------
-require('dotenv').config()
------------CREAR UN ARCHIVO EN LA CARPETA GENERAL LLAMADO ".env"-----------------
