@@ -13,10 +13,11 @@ const port = process.env.PORT || 3000;//despues de definir el puerto usar el exp
 const mongoose = require('mongoose');
 
 
+
 const user = 'alzel5';
 const password = 'dbprueba';
 const dbname = 'veterinaria';//nombre de la base de datos
-const uri = `mongodb+srv://${user}:${password}@cluster0.hf7tplk.mongodb.net/${dbname}`;//para esas comillas inver//
+const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.hf7tplk.mongodb.net/${process.env.DBNAME}`;//para esas comillas inver//
 
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
