@@ -1,4 +1,4 @@
 node_modules
 documentation
-.env
+*.env
 *.txt
