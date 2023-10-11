@@ -27,7 +27,7 @@ app.set('views', __dirname + '/views');//se tiene que acceder a la carpeta views
 
 //Rutas Web//se le puede cambiar nombre a la carpeta
 app.use('/',require('./router/RutasWeb'));//se usa el modulo de rutas web
-app.use('/mascotas',require('./router/mascotas'));//se usa el modulo de rutas web
+app.use('/mascotas',require('./router/Mascotas'));//se usa el modulo de rutas web
 
 /* EN LAS APP.GET SE CONFIGURAN LAS URL, APP USE ES PARA DEFINIR LAS CARPETAS EN USO TIPO PUBLIC Y VIEWS */
 app.use(express.static(__dirname + '/public'));//se define la carpeta publica para que se pueda acceder a ella
