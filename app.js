@@ -1,6 +1,13 @@
 
+/* TODOS LOS REQUERIMIENTOS EN LA PARTE SUPERIOR */
 const express = require('express');
+const bodyParser = require('body-parser');//para poder leer los datos del formulario
 const app = express();
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))//POST para procesar
+// parse application/json
+app.use(bodyParser.json())//FETCH para enviar datos a traves de json
 
 require('dotenv').config()
 /* PRIMERO DEFINIR EL REQUIRE EXPRESS, LUEGO GUARDARLO EN UNA VARIABLE */
@@ -27,16 +34,19 @@ app.set('views', __dirname + '/views');//se tiene que acceder a la carpeta views
 
 //Rutas Web//se le puede cambiar nombre a la carpeta
 app.use('/',require('./router/RutasWeb'));//se usa el modulo de rutas web
-app.use('/mascotas',require('./router/Mascotas'));//se usa el modulo de rutas web
+app.use('/mascotas', require('./router/Mascotas'));//se usa el modulo de rutas web
+
+
 
 /* EN LAS APP.GET SE CONFIGURAN LAS URL, APP USE ES PARA DEFINIR LAS CARPETAS EN USO TIPO PUBLIC Y VIEWS */
 app.use(express.static(__dirname + '/public'));//se define la carpeta publica para que se pueda acceder a ella
 
 //para la 404 se usa no un get, sino un use
+//Aqui se pueden generar textos de forma dinamica
 app.use((req,res,next)=>{
      res.status(404).render("404", {
           titulo: "404",
-          descripcion: "titulo del sitio web"
+          descripcion: "Hay algo que estabas buscando?"
      })
 })
 

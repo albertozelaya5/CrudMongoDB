@@ -1,0 +1,22 @@
+<%- include("templates/cabecera", {tituloWeb: 'Crear nueva mascota'}) %>
+
+     <div class="container">
+          <h1>Crear</h1><!-- Se tiene que establecer el metodo para que se aline con el de la ruta router -->
+          <form action="/mascotas" method="POST"><!-- En el action se pone la ruta donde estaran -->
+               <input type="text"
+                    placeholder="Agregar nombre"
+                    class="form-control my-2"
+                    name="nombre"
+               ><!-- name la sustitucion de las variables de mongodb importadas desde el modelo -->
+               <input type="text"
+                    placeholder="Agregar descripcion"
+                    class="form-control my-2"
+                    name="descripcion"
+               ><!-- Type submit para que procese el formulario -->
+               <button class="btn btn-success btn-block" type="submit">Agregar</button>
+          </form>
+     </div>
+
+
+     
+<%- include("templates/footer") %>
