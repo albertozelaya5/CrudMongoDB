@@ -4,7 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');//para poder leer los datos del formulario
 const app = express();
 
-// parse application/x-www-form-urlencoded
+// parse application/x-www-form-urlencoded SIEMPRE CONFIGURAR BODY PARSER
 app.use(bodyParser.urlencoded({ extended: false }))//POST para procesar
 // parse application/json
 app.use(bodyParser.json())//FETCH para enviar datos a traves de json
